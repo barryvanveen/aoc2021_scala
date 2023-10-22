@@ -12,7 +12,7 @@ object Util {
       toAbsolutePath(filename)
     )
     val lines = bufferedSource.getLines.toList.map(_.toInt)
-    bufferedSource.close();
+    bufferedSource.close()
     lines
   }
 }
