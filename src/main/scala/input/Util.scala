@@ -7,12 +7,16 @@ object Util {
     getClass.getClassLoader.getResource(filename).getPath
   }
 
-  def readLinesAsInt(filename: String): List[Int] = {
+  def readLines(filename: String): List[String] = {
     val bufferedSource = Source.fromFile(
       toAbsolutePath(filename)
     )
-    val lines = bufferedSource.getLines.toList.map(_.toInt)
+    val lines = bufferedSource.getLines.toList
     bufferedSource.close()
     lines
+  }
+
+  def readLinesAsInt(filename: String): List[Int] = {
+    this.readLines(filename).map(_.toInt)
   }
 }

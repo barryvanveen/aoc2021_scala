@@ -39,6 +39,7 @@ build/
 
 ### IntelliJ ###
 .idea
+.bsp
 
 ### AOC ###
 *.txt
