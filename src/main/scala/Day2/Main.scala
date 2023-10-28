@@ -1,10 +1,11 @@
 package Day2
 
+import input.InputFile
 import input.Util.readLines
 
-object Main {
+object Main extends InputFile {
   def main(args: Array[String]): Unit = {
-    val steps = readLines("day2_example.txt")
+    val steps = readLines(getInputFile(args))
       .map(InputUtils.inputToStep)
 
     part1(steps)
@@ -12,9 +13,8 @@ object Main {
 
   private def part1(steps: List[Step]): Unit = {
     val end = steps.foldLeft(Position(0, 0))(
-        (currentPosition, nextStep) => currentPosition.move(nextStep)
-      )
-    end.print()
+      (currentPosition, nextStep) => currentPosition.move(nextStep)
+    )
     println(s"Part 1: ${end.value}")
   }
 

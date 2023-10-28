@@ -1,10 +1,11 @@
 package Day1
 
+import input.InputFile
 import input.Util.readLinesAsInt
 
-object Main {
+object Main extends InputFile {
   def main(args: Array[String]): Unit = {
-    val lines = readLinesAsInt("day1_example.txt")
+    val lines = readLinesAsInt(getInputFile(args))
 
     part1(lines)
     part2(lines)
