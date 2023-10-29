@@ -9,6 +9,8 @@ object Main extends InputFile {
 
     val value1 = part1(input)
     println(s"Part 1: $value1")
+    val value2 = part2(input)
+    println(s"Part 2: $value2")
   }
 
   def part1(input: List[String]): Int = {
@@ -18,7 +20,10 @@ object Main extends InputFile {
     ).value
   }
 
-  private def part2(lines: List[Int]): Unit = {
-    println(s"Part 2: ???")
+  def part2(input: List[String]): Int = {
+    // start at 0,0 and move through all steps, returning the value of the final position
+    input.map(InputUtils.inputToStep).foldLeft(PositionWithAim(0, 0, 0))(
+      (currentPosition, nextStep) => currentPosition.move(nextStep)
+    ).value
   }
 }
