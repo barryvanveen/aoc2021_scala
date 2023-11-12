@@ -15,14 +15,14 @@ object Main extends InputFile {
 
   def part1(input: List[String]): Int = {
     // start at 0,0 and move through all steps, returning the value of the final position
-    input.map(InputUtils.inputToStep).foldLeft(Position(0, 0))(
+    input.map(Step.apply).foldLeft(Position(0, 0))(
       (currentPosition, nextStep) => currentPosition.move(nextStep)
     ).value
   }
 
   def part2(input: List[String]): Int = {
     // start at 0,0 and move through all steps, returning the value of the final position
-    input.map(InputUtils.inputToStep).foldLeft(PositionWithAim(0, 0, 0))(
+    input.map(Step.apply).foldLeft(PositionWithAim(0, 0, 0))(
       (currentPosition, nextStep) => currentPosition.move(nextStep)
     ).value
   }
