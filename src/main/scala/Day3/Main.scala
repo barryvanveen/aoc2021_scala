@@ -42,14 +42,14 @@ object Main extends InputFile {
   def part2(input: List[String]): Int = {
     val wordLength = input.last.length
 
-    var oxygenValues = InputUtils.inputToBitSequences(input)
+    var oxygenValues = BitSequences(input)
     for
       i <- 0 to wordLength
       if oxygenValues.size() > 1
     do
       oxygenValues = oxygenValues.filterOxygenValues(i)
 
-    var co2Values = InputUtils.inputToBitSequences(input)
+    var co2Values = BitSequences(input)
       for
         i <- 0 to wordLength
         if co2Values.size() > 1

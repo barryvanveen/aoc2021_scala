@@ -4,6 +4,10 @@ case class BitSequences(
   seq: Vector[BitSequence]
 )
 
+object BitSequences:
+  def apply(input: List[String]): BitSequences =
+      BitSequences(input.map(BitSequence.apply).toVector)
+
 extension (in: BitSequences)
   private def countOnes(bit: Int): Int =
     in.seq.map((a: BitSequence) => a.apply(bit)).sum

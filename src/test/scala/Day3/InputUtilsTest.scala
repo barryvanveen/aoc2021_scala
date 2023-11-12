@@ -5,16 +5,6 @@ import org.scalatest.prop.TableDrivenPropertyChecks.*
 import org.scalatest.prop.TableFor2
 
 class InputUtilsTest extends AnyFunSpec  {
-  describe("booleanToInt") {
-    it("it converts false to 0") {
-      assert(InputUtils.booleanToInt(false) == 0)
-    }
-
-    it("it converts true to 1") {
-      assert(InputUtils.booleanToInt(true) == 1)
-    }
-  }
-
   private val stringToIntCases =
     Table(
       ("input", "output"), // First tuple defines column names
